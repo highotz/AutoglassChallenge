@@ -5,6 +5,14 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Domain", "AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj", "{BFEBAB71-0034-44AF-829D-4E8314FE3333}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Application", "AutoglassChallenge.Application\AutoglassChallenge.Application.csproj", "{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.API", "AutoglassChallenge.API\AutoglassChallenge.API.csproj", "{475FF11B-EE01-4296-8ECA-340F81DF8712}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Intra", "AutoglassChallenge.Intra\AutoglassChallenge.Intra.csproj", "{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Tests", "AutoglassChallenge.Tests\AutoglassChallenge.Tests.csproj", "{75FE8CB2-89BF-4871-B423-68191AAFD7D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475FF11B-EE01-4296-8ECA-340F81DF8712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475FF11B-EE01-4296-8ECA-340F81DF8712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475FF11B-EE01-4296-8ECA-340F81DF8712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475FF11B-EE01-4296-8ECA-340F81DF8712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FE8CB2-89BF-4871-B423-68191AAFD7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FE8CB2-89BF-4871-B423-68191AAFD7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FE8CB2-89BF-4871-B423-68191AAFD7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FE8CB2-89BF-4871-B423-68191AAFD7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
