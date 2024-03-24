@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Domain", "AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj", "{BFEBAB71-0034-44AF-829D-4E8314FE3333}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEBAB71-0034-44AF-829D-4E8314FE3333}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F9D2978-E0E9-4BA3-968E-57A421FDDF42}
+	EndGlobalSection
+EndGlobal
