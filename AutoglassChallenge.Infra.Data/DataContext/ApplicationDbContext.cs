@@ -10,18 +10,12 @@ namespace AutoglassChallenge.Intra.Data.DataContext
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) => ChangeTracker.LazyLoadingEnabled = false;
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
-            modelBuilder.ApplyConfiguration(new ProductMap());
-        }
+            base.OnModelCreating(builder);
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("SQLConnection");
-            }
+            builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
         }
     }
 }
