@@ -6,7 +6,7 @@ using AutoglassChallenge.Domain.Filters;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AUTOGLASS.ProductManager.Api.Controllers
+namespace AutoglassChallenge.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -46,7 +46,7 @@ namespace AUTOGLASS.ProductManager.Api.Controllers
                 return BuildError(ex);
             }
 
-        }        
+        }
 
         /// <summary>
         /// Update produt
@@ -63,15 +63,15 @@ namespace AUTOGLASS.ProductManager.Api.Controllers
                     var productDto = _mapper.Map<ProductDto>(productRequest);
                     productDto.Id = productId;
                     await _productService.Update(productDto);
-                }                
+                }
 
                 return Ok();
             }
             catch (Exception ex)
             {
                 return BuildError(ex);
-            }           
-            
+            }
+
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace AUTOGLASS.ProductManager.Api.Controllers
         {
             await _productService.Delete(productId);
         }
-        
+
         /// <summary>
         /// Get products by filter and paginated
         /// </summary>
@@ -109,7 +109,7 @@ namespace AUTOGLASS.ProductManager.Api.Controllers
         public async Task<ProductResponse> GetById([FromRoute] int productId)
         {
             var product = await _productService.GetById(productId);
-            
+
             if (product is null)
             {
                 return default;

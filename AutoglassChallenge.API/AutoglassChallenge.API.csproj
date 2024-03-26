@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutoglassChallenge.Application\AutoglassChallenge.Application.csproj" />
+    <ProjectReference Include="..\AutoglassChallenge.Infra.IoC\AutoglassChallenge.Infra.IoC.csproj" />
   </ItemGroup>
 
 </Project>

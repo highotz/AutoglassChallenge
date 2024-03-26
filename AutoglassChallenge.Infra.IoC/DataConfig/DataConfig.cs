@@ -1,4 +1,5 @@
-﻿using AutoglassChallenge.Application.Interfaces;
+﻿#nullable disable
+using AutoglassChallenge.Application.Interfaces;
 using AutoglassChallenge.Application.Services;
 using AutoglassChallenge.Domain.Interfaces;
 using AutoglassChallenge.Intra.Data.DataContext;
@@ -8,14 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-#nullable disable
-namespace AutoglassChallenge.Intra.Data.DataConfig
+namespace AutoglassChallenge.Infra.IoC.DataConfig
 {
     public static class DataConfig
     {
         public static IServiceCollection AddDataConfig(this IServiceCollection services, IConfiguration configuration)
         {
-            //basic IOC layer
             services
                    .AddDbContextPool<ApplicationDbContext>(opts => opts
                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
@@ -25,8 +24,8 @@ namespace AutoglassChallenge.Intra.Data.DataConfig
 
             //add repositories here
             services.TryAddScoped(typeof(IProductRepository), typeof(ProductRepository));
-            
-            
+
+
 
             //add services here
             services.TryAddScoped(typeof(IProductService), typeof(ProductService));
