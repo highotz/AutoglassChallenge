@@ -1,5 +1,4 @@
 ﻿using AutoglassChallenge.Application.Interfaces;
-using AutoglassChallenge.Application.Results;
 using AutoglassChallenge.Domain.DTOs;
 using AutoglassChallenge.Domain.Entities;
 using AutoglassChallenge.Domain.Filters;

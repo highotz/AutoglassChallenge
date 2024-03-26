@@ -24,8 +24,4 @@
     <ProjectReference Include="..\AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>
