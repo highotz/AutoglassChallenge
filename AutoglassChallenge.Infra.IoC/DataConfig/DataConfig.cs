@@ -19,7 +19,7 @@ namespace AutoglassChallenge.Infra.IoC.DataConfig
                    .AddDbContextPool<ApplicationDbContext>(opts => opts
                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTrackingWithIdentityResolution)
                    .UseSqlServer(configuration
-                   .GetConnectionString("SQLConnection"), b => b
+                   .GetConnectionString("DefaultConnection"), b => b
                    .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             //add repositories here

@@ -5,9 +5,11 @@ namespace AutoglassChallenge.Intra.Data.DataContext
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+            ChangeTracker.LazyLoadingEnabled = false;
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) => ChangeTracker.LazyLoadingEnabled = false;
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
