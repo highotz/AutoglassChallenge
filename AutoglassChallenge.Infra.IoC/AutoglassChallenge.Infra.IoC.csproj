@@ -25,7 +25,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\AutoglassChallenge.Application\AutoglassChallenge.Application.csproj" />
 	  <ProjectReference Include="..\AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj" />
-	  <ProjectReference Include="..\AutoglassChallenge.Intra\AutoglassChallenge.Infra.Data.csproj" />
+	  <ProjectReference Include="..\AutoglassChallenge.Infra.Data\AutoglassChallenge.Infra.Data.csproj" />
 	</ItemGroup>
 
 </Project>
