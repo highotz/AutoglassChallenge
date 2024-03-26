@@ -3,7 +3,7 @@
     public class ProductFilter
     {
         public string? Description { get; set; }
-        public DateTime? CreateDate { get; set; }
+        public DateTime? ManufacturingDate { get; set; }
         public DateTime? ExpirationDate { get; set; }
         public bool? Status { get; set; }
         public string? SupplierCode { get; set; }

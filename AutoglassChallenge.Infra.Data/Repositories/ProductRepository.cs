@@ -45,8 +45,8 @@ namespace AutoglassChallenge.Intra.Repositories
                 query = query.Where(x => x.Status == filter.Status);
             if (filter.Description != null)
                 query = query.Where(x => x.Description.Contains(filter.Description));
-            if (filter.CreateDate.HasValue)
-                query = query.Where(x => x.ManufacturingDate.Date == filter.CreateDate);
+            if (filter.ManufacturingDate.HasValue)
+                query = query.Where(x => x.ManufacturingDate.Date == filter.ManufacturingDate);
             if (filter.ExpirationDate.HasValue)
                 query = query.Where(x => x.ExpirationDate.Date == filter.ExpirationDate);
             if (filter.SupplierDescription != null)
