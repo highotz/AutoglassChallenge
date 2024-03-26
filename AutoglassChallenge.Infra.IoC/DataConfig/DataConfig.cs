@@ -1,5 +1,6 @@
 ﻿#nullable disable
 using AutoglassChallenge.Application.Interfaces;
+using AutoglassChallenge.Application.Profiles;
 using AutoglassChallenge.Application.Services;
 using AutoglassChallenge.Domain.Interfaces;
 using AutoglassChallenge.Intra.Data.DataContext;
@@ -21,6 +22,9 @@ namespace AutoglassChallenge.Infra.IoC.DataConfig
                    .UseSqlServer(configuration
                    .GetConnectionString("DefaultConnection"), b => b
                    .MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+
+            services.AddAutoMapper(typeof(DtoToEntityProfile));
 
             //add repositories here
             services.TryAddScoped(typeof(IProductRepository), typeof(ProductRepository));

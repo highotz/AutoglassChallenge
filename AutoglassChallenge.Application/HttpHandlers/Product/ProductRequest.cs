@@ -6,7 +6,7 @@
         public DateTime CreateDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public int SupplierCode { get; set; }
-        public int SupplierDescription { get; set; }
-        public int SupplierCNPJ { get; set; }
+        public string SupplierDescription { get; set; }
+        public string SupplierCNPJ { get; set; }
     }
 }
