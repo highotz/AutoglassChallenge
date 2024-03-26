@@ -4,6 +4,7 @@ using AutoglassChallenge.Domain.Filters;
 using AutoglassChallenge.Domain.Interfaces;
 using AutoglassChallenge.Intra.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace AutoglassChallenge.Intra.Repositories
 {
@@ -49,6 +50,8 @@ namespace AutoglassChallenge.Intra.Repositories
                 query = query.Where(x => x.ManufacturingDate.Date == filter.ManufacturingDate);
             if (filter.ExpirationDate.HasValue)
                 query = query.Where(x => x.ExpirationDate.Date == filter.ExpirationDate);
+            if (filter.SupplierCode != null)
+                query = query.Where(x => x.SupplierCode == filter.SupplierCode);
             if (filter.SupplierDescription != null)
                 query = query.Where(x => x.SupplierDescription.Contains(filter.SupplierDescription));
             if (filter.SupplierCNPJ != null)
