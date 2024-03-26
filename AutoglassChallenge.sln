@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Domain", "AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj", "{BFEBAB71-0034-44AF-829D-4E8314FE3333}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoglassChallenge.Domain", "AutoglassChallenge.Domain\AutoglassChallenge.Domain.csproj", "{BFEBAB71-0034-44AF-829D-4E8314FE3333}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Application", "AutoglassChallenge.Application\AutoglassChallenge.Application.csproj", "{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoglassChallenge.Application", "AutoglassChallenge.Application\AutoglassChallenge.Application.csproj", "{6BED99E2-B15D-4E87-BAE5-C5898226BE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.API", "AutoglassChallenge.API\AutoglassChallenge.API.csproj", "{475FF11B-EE01-4296-8ECA-340F81DF8712}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoglassChallenge.API", "AutoglassChallenge.API\AutoglassChallenge.API.csproj", "{475FF11B-EE01-4296-8ECA-340F81DF8712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Intra", "AutoglassChallenge.Intra\AutoglassChallenge.Intra.csproj", "{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoglassChallenge.Intra", "AutoglassChallenge.Intra\AutoglassChallenge.Intra.csproj", "{FC9A7605-DCE9-46D2-BD4C-EE1D5DD3CAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoglassChallenge.Tests", "AutoglassChallenge.Tests\AutoglassChallenge.Tests.csproj", "{75FE8CB2-89BF-4871-B423-68191AAFD7D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoglassChallenge.Tests", "AutoglassChallenge.Tests\AutoglassChallenge.Tests.csproj", "{75FE8CB2-89BF-4871-B423-68191AAFD7D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{98262104-4BA6-49F7-9339-08910BCA6EB0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

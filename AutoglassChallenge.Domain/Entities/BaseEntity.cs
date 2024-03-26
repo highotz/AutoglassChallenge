@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoglassChallenge.Application.DTOs
+namespace AutoglassChallenge.Domain.Entities
 {
-    public class ProductResponse
+    public class BaseEntity
     {
+        public int Id { get; private set; }
     }
 }

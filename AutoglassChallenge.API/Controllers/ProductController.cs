@@ -1,91 +1,130 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Data.Common;
+﻿using AutoglassChallenge.API.Models.Errors;
+using AutoglassChallenge.Application.HttpHandlers.Product;
+using AutoglassChallenge.Application.Interfaces;
+using AutoglassChallenge.Domain.DTOs;
+using AutoglassChallenge.Domain.Filters;
+using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
-namespace AutoglassChallenge.API.Controllers
+namespace AUTOGLASS.ProductManager.Api.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("")]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IProductService productService) => _productService = productService;
-        public ProductsController(IProductService productService) => _productService = productService;
+        public ProductController(IProductService productService,
+            IMapper mapper)
+        {
+            _mapper = mapper;
+            _productService = productService;
+        }
 
-        [HttpGet("api/v1/{productId}")]
-        public async Task<IActionResult> GetId(int productId)
+        /// <summary>
+        /// Create product
+        /// </summary>
+        /// <param name="productRequest">Model to create product</param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] ProductRequest productRequest)
         {
             try
             {
-                var existing = await _productService.GetId(productId);
+                if (productRequest is null)
+                {
+                    return Ok();
+                }
 
-                return Ok(existing);
-
+                var productDto = _mapper.Map<ProductDto>(productRequest);
+                await _productService.Create(productDto);
+                return Ok();
             }
-            catch (DbUpdateException)
+            catch (Exception ex)
             {
-                return StatusCode(500);
+                return BuildError(ex);
             }
-        }
 
-        [HttpGet("api/v1/products/{skip:int}/{take:int}")]
-        public IActionResult Get()
+        }        
+
+        /// <summary>
+        /// Update produt
+        /// </summary>
+        /// <param name="productId">Product id</param>
+        /// <param name="productRequest">Model to update produt</param>
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> Update(int productId, [FromBody] ProductRequest productRequest)
         {
             try
             {
-                var list = _productService.GetAll();
+                if (productRequest != null)
+                {
+                    var productDto = _mapper.Map<ProductDto>(productRequest);
+                    productDto.Id = productId;
+                    await _productService.Update(productDto);
+                }                
 
-                return Ok(new { data = list });
+                return Ok();
             }
-            catch
+            catch (Exception ex)
             {
-                return StatusCode(500);
-            }
+                return BuildError(ex);
+            }           
+            
         }
 
-        [HttpPost("api/v1/products")]
-        public async Task<IActionResult> Create(ProductRequest model)
+        /// <summary>
+        /// Inactive a product by id
+        /// </summary>
+        /// <param name="productId">Product id</param>
+        [HttpDelete("{productId}")]
+        public async Task Delete([FromRoute] int productId)
         {
-            if (await _productService.Add(model))
-                return CreatedAtAction(nameof(Create), model);
-
-            return BadRequest(new Result(400, $"Error", false, model));
-
+            await _productService.Delete(productId);
+        }
+        
+        /// <summary>
+        /// Get products by filter and paginated
+        /// </summary>
+        /// <param name="productFilter">Model to filter products</param>
+        [HttpGet]
+        public async Task<PaginatedDto<ProductResponse>> GetByFilterPaginated([FromQuery] ProductFilter productFilter)
+        {
+            var products = await _productService.GetByFilterPaginated(productFilter);
+            return new PaginatedDto<ProductResponse>()
+            {
+                Items = products.Items.Select(x => _mapper.Map<ProductResponse>(x)),
+                ItemsByPage = products.ItemsByPage,
+                PageIndex = products.PageIndex,
+                TotalItems = products.TotalItems,
+            };
         }
 
-        [HttpPut("products/{productId:int}")]
-        public async Task<IActionResult> Update(int productId, ProductRequest model)
+        /// <summary>
+        /// Get produt by id
+        /// </summary>
+        /// <param name="productId">Id from product</param>
+        [HttpGet("{productId}")]
+        public async Task<ProductResponse> GetById([FromRoute] int productId)
         {
-            try
+            var product = await _productService.GetById(productId);
+            
+            if (product is null)
             {
-                var existing = await _productService.GetId(productId);
-
-                await _productService.Update(productId, model);
-
-                return NoContent();
-            }
-            catch (DbUpdateException)
-            {
-                return StatusCode(500);
+                return default;
             }
 
+            return _mapper.Map<ProductResponse>(product);
         }
 
-        [HttpDelete("products/{productId:int}")]
-        public async Task<IActionResult> Delete(int productId)
+        private ObjectResult BuildError(Exception ex)
         {
-
-            try
+            return BadRequest(new ErrorResponse()
             {
-                var existing = await _productService.Delete(productId);
-                return NoContent();
-
-            }
-            catch (DbException)
-            {
-                return StatusCode(500);
-            }
-
+                Code = "Dados invalidos",
+                Message = ex.Message
+            });
         }
     }
 }
