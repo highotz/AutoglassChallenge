@@ -1,4 +1,3 @@
-using AutoglassChallenge.Infra.IoC;
 using AutoglassChallenge.Infra.IoC.DataConfig;
 using Microsoft.AspNetCore.ResponseCompression;
 using System.IO.Compression;

@@ -1,5 +1,4 @@
 ﻿using AutoglassChallenge.Domain.Entities;
-using AutoglassChallenge.Intra.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutoglassChallenge.Intra.Data.DataContext

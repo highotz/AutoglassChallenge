@@ -3,8 +3,6 @@ using AutoglassChallenge.Domain.DTOs;
 using AutoglassChallenge.Domain.Entities;
 using AutoglassChallenge.Domain.Filters;
 using AutoglassChallenge.Domain.Interfaces;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 
 namespace AutoglassChallenge.Application.Services
 {
